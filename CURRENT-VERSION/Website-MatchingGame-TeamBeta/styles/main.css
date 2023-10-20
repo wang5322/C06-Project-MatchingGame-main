@@ -1,0 +1,274 @@
+:root {
+  --linesTextColor: #170443;
+  --btnSubColor: #5fc79f;
+  --lightBackColor: #e6d996;
+  --lightBackColor2: #d6ae69;
+  --cardBaseColor: #3685a1;
+
+
+  --shadowShow: #EBF8FF;
+  --shadowLock: #41EB74;
+  --shadowHide: #0B1F32;
+
+  --bigFont: 'Aoboshi One';
+  /* --bigFont: 'Fantasy'; */
+  --littleFont: 'PT Serif';
+  --bulletFont: 'Arial';
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  /* background-image: url('images/backgroundsecondimage.jpg'); 
+    background-size: cover;
+    background-repeat: no-repeat;*/
+  background-color: var(--lightBackColor);
+}
+
+h1 {
+  margin: 0px;
+}
+
+.header {
+  color: var(--linesTextColor);
+  padding: 10px;
+  text-align: center;
+  font-family: var(--bigFont);
+  font-size: 35px;
+  height: fit-content;
+  background-color: var(--lightBackColor2);
+}
+
+.subHeader {
+  background-color: var(--btnSubColor);
+  color: var(--linesTextColor);
+
+  width: 100%;
+  height: fit-content;
+  text-align: center;
+
+  padding: 0px;
+  padding-top: 0.4vw;
+  padding-bottom: 0.4vw;
+
+
+  border-bottom: 3px solid var(--linesTextColor);
+  border-top: 3px solid var(--linesTextColor);
+}
+
+#subHeaderContent {
+  vertical-align: middle;
+  font-size: 45px;
+  font-family: Arial, Geneva, Tahoma, sans-serif;
+  margin: 0;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.pHolder {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.container {
+  display: flex;
+  align-self: center;
+  max-width: fit-content;
+  max-width: 1800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.column {
+  flex: 1;
+  padding: 20px;
+}
+
+.column.left {
+  width: 20%;
+}
+
+.column.right {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding-left: 0px;
+}
+
+.column.middle {
+  width: 60%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, max-content);
+  gap: 10px;
+}
+
+
+.middle-column-item {
+
+  background-color: var(--cardBaseColor);
+  padding: 0px;
+  text-align: center;
+  height: fit-content;
+
+  border-radius: 3%;
+}
+
+.right-column-top {
+
+  padding: 10px;
+  text-align: center;
+}
+
+.right-column-bottom {
+
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+}
+
+h1 {
+  text-align: center;
+}
+
+h3 {
+  font-size: 2vw;
+  margin: 0px;
+  margin-top: 1vw;
+  padding: 0px;
+}
+
+.game-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+
+.ovalHolder {
+  width: 100%;
+  height: fit-content;
+  margin: 0px 0px 30px 0px;
+}
+
+.oval {
+  width: 100%;
+  height: 100%;
+  background-color: var(--btnSubColor);
+  border: 3px solid var(--linesTextColor);
+  border-radius: 35px;
+  color: var(--linesTextColor);
+  font-size: 2vw;
+  padding: 10px 0px 10px 10px;
+  box-shadow: 0 0 3px var(--shadowHide);
+}
+
+#newGameBtn {
+  visibility: hidden;
+}
+
+li {
+  font-family: var(--bulletFont), sans-serif;
+  font-size: 1.3vw;
+  text-align: start;
+  padding-bottom: 10px;
+}
+
+.matched {
+  background-color: green;
+}
+
+.hide {
+  display: none;
+}
+
+#instruction {
+  width: 100%;
+  height: fit-content;
+  background: var(--btnSubColor);
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  box-shadow: 0 0 3px var(--shadowHide);
+  color: var(--linesTextColor);
+  padding: 10px 15px 10px 0px;
+  border: 3px solid var(--linesTextColor);
+}
+
+
+/* ************** CARDS ***************** */
+
+.cardHolder {
+  width: 8.1vw;
+  height: 10.8vw;
+  max-width: 240px;
+  max-height: 320px;
+  border-radius: 10%;
+
+}
+
+.cardImg {
+  width: 100%;
+  height: 100%;
+
+}
+
+
+.cardHolder {
+  padding: 15px;
+  overflow: hidden;
+  border-radius: 5%;
+}
+
+.cardToFlip {
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  perspective: 1000px;
+}
+
+.cardToFlip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 10px 10px var(--shadowHide);
+
+}
+
+.cardToFlip.showCard .cardToFlip-inner {
+  transform: rotateY(180deg);
+  box-shadow: 0 4px 10px 3px var(--shadowShow);
+}
+
+.cardToFlip.lockCard .cardToFlip-inner {
+  transform: rotateY(180deg);
+  box-shadow: 0 2px 10px 3px var(--shadowLock);
+}
+
+.cardBack,
+.cardFace {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  /* Safari */
+  backface-visibility: hidden;
+}
+
+.cardBack {
+  background-color: #bbb;
+  color: black;
+}
+
+.cardFace {
+  background-color: darkred;
+  color: black;
+  transform: rotateY(180deg);
+}

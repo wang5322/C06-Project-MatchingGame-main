@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Memory Game: Team Beta</title>
+  <meta name="description" content="A fun matching game with pretty images.">
+  <meta name="author" content="Group Beta: Soliloquy, Xuerun, Fawzi">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Aoboshi+One&family=PT+Serif&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="styles/main.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+</head>
+
+<body>
+  <div class="header">
+    <h1>Memory Game</h1>
+  </div>
+
+  <div class="subHeader">
+    <div class="pHolder">
+      <p id="subHeaderContent">Welcome!</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="column left">
+      <div id="dashboard">
+
+      </div>
+    </div>
+
+    <div class="column middle" id="tile-container"></div>
+
+
+    <div class="column right">
+
+
+      <div class="right-column-top">
+
+        <div class="ovalHolder">
+          <div class="guessesTally oval">
+            Guesses: <span id="numGuesses"> -- </span>
+          </div>
+        </div>
+        <div class="ovalHolder">
+          <div class="bestScoreTally oval">
+            Best Score: <span id="bestScore"> -- </span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="right-column-bottom">
+        <div class="ovalHolder">
+          <button class="oval" id="newGameBtn">Play Again!</button>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>
